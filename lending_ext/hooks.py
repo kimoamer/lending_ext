@@ -82,7 +82,7 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "lending_ext.install.before_install"
+before_install = "lending_ext.patch.fix_Loan_Repayment_Schedule"
 # after_install = "lending_ext.install.after_install"
 
 # Uninstallation
