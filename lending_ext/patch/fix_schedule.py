@@ -12,7 +12,7 @@ def fix_Loan_Repayment_Schedule():
                 parent_doc = frappe.get_doc("Loan Repayment Schedule", lrse)  # Replace with actual parent document name
                 updated_data = frappe.db.get_list("Repayment Schedule",filters={"parent":loan},fields=["modified","modified_by","owner","docstatus","idx","payment_date","principal_amount","interest_amount","total_payment","balance_loan_amount","is_accrued"],ignore_permissions=True)
                 # Loop through the updated data and append to the child table
-                if len(parent_doc.repayment_schedule) = 0:
+                if len(parent_doc.repayment_schedule) == 0:
                     for entry in updated_data:
                         parent_doc.append("repayment_schedule", {
                             "modified": entry.get("modified"),
